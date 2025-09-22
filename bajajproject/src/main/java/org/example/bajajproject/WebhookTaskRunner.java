@@ -70,7 +70,6 @@ public class WebhookTaskRunner implements CommandLineRunner {
     private void sendSolution(String webhookUrl, String finalQuery) {
         HttpHeaders headers = new HttpHeaders();
 
-        // Use only token if API expects it without "Bearer"
         headers.set("Authorization", accessToken);
         headers.setContentType(MediaType.APPLICATION_JSON);
 
@@ -88,4 +87,5 @@ public class WebhookTaskRunner implements CommandLineRunner {
             System.err.println("Unexpected error while submitting solution: " + e.getMessage());
         }
     }
+
 }
